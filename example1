@@ -1,0 +1,45 @@
+
+
+Cron jobs are the task assigned to OS that executed automatically at regular intervals of time.
+
+ This features are meant to be for backing up of data, freeing up of memory, etc,.. 
+ This is useful. But disastrous if not used it properly and correctly.
+
+
+Individual users on linux have separate crontabs(Cron Table). 
+
+You can add crontabs for individual users using the command:
+
+crontab -e
+
+Here is the format for cron jobs
+
+-----------------------------------------------------
+
+
+  .---------------- minute (0 - 59)
+
+  |  .------------- hour (0 - 23)
+
+  |  |  .---------- day of month (1 - 31)
+
+  |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+
+  |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+
+  |  |  |  |  |
+
+  *  *  *  *  * user-name  command to be executed        
+
+
+
+The common crontab file is located in /etc/crontab
+
+
+Here is a simple example
+
+
+  *  *  *  *  * root date >> /root/Desktop/cron1.txt 
+
+
+Its append date to the file /root/Desktop/cron1.txt  in every minute.
